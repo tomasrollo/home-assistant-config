@@ -1,0 +1,20 @@
+- alias: Notify me when sun sets
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    service: notify.pb
+    data:
+      message: "Slunce zaslo"
+      title: "Slunce"
+      target: device/TomasiPhone
+- alias: TMEP reporting
+  trigger:
+    platform: time
+    minutes: '/5'
+    seconds: 0
+  action:
+    service: notify.TMEP_REST
+    data_template:
+      message: "{{ float(states.sensor.pokus_teplota.state) }}"
+      title: "{{ float(states.sensor.pokus_vlhkost.state) }}"

@@ -1,0 +1,95 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Domov
+  # Location required to calculate the time the sun rises and sets
+  latitude: 50.105641
+  longitude: 14.487205
+  elevation: 199
+  # C for Celsius, F for Fahrenheit
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Prague
+
+# Sets web links
+weblink: !include web_links.yaml
+
+ifttt:
+  key: !secret ifttt_key
+
+http:
+  api_password: !secret http_password
+#  ssl_certificate: '/etc/letsencrypt/live/rollo-home.duckdns.org/fullchain.pem'
+#  ssl_key: '/etc/letsencrypt/live/rollo-home.duckdns.org/privkey.pem'
+
+# Enables the frontend
+frontend:
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Configure how long to store data internally
+recorder:
+  purge_days: 14
+
+# Enables support for tracking state changes over time.
+history:
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - sun
+      - updater
+
+#influxdb:
+#  host: rollo-forpsi1.duckdns.org
+#  port: 8086
+#  username: home-assistant
+#  password: !secret influxdb_ha_password
+#  database: home_assistant
+#  blacklist:
+#    - sun.sun
+#  tags:
+#    instance: prod
+#    source: hass
+
+# View all events in a logbook
+logbook:
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - sun
+      - updater
+
+mqtt:
+  broker: localhost
+  port: 1883
+  client_id: home-assistant-rpi
+  keepalive: 60
+  username: homeassistant
+  password: !secret mqtt_password
+
+# Track the sun
+sun:
+
+notify:
+- platform: pushbullet
+  api_key: !secret pushbullet_key
+  name: pb
+- platform: rest
+  name: TMEP_REST
+  resource: http://rollo-kk19.tmep.cz
+  method: GET
+  message_param_name: pokus-esp8266
+  title_param_name: humV
+
+automation: !include automation.yaml
+
+group: !include groups.yaml
+
+shell_command: !include shell_commands.yaml
+
+sensor: !include sensors.yaml

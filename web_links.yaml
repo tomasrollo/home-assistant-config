@@ -1,0 +1,10 @@
+entities:
+  - name: Router
+    url: http://10.0.0.139
+  - name: RPi glances
+    url: http://10.0.0.100:61208
+  - name: BananaPi glances
+    url: http://10.0.0.110:61208
+  - name: BananaPi OpenMediaVault
+    url: http://10.0.0.110
+

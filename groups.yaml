@@ -1,0 +1,49 @@
+# Groups
+rpi:
+  name: Raspberry Pi
+  entities:
+    - sensor.rpi_cpu_load
+    - sensor.rpi_disk_use
+    - sensor.rpi_ram_use
+    - sensor.rpi_swap_use
+    - sensor.rpi_disk_free
+bananapi:
+  name: Banana Pi
+  entities:
+    - sensor.bananapi_cpu_load
+    - sensor.bananapi_disk_use
+    - sensor.bananapi_ram_use
+    - sensor.bananapi_swap_use
+    - sensor.bananapi_disk_free
+orangepi:
+  name: Orange Pi Zero
+  entities:
+    - sensor.orangepi_zero_cpu_load
+    - sensor.orangepi_zero_disk_use
+    - sensor.orangepi_zero_ram_use
+    - sensor.orangepi_zero_swap_use
+    - sensor.orangepi_zero_disk_free
+teploty:
+  name: Teploty
+  entities:
+    - sun.sun
+    - sensor.pokus_teplota
+    - sensor.pokus_vlhkost
+    - sensor.pokus_heat_index
+
+# Views
+living:
+  name: Environment
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.teploty
+computers:
+  name: Computers
+  icon: mdi:laptop
+  view: yes
+  entities:
+    - group.rpi
+    - group.bananapi
+    - group.orangepi
+

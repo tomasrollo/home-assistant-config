@@ -1,0 +1,74 @@
+- platform: mqtt
+  state_topic: "pokus/sensor/temperature"
+  name: "Pokus teplota"
+  qos: 0
+  unit_of_measurement: "C"
+- platform: mqtt
+  state_topic: "pokus/sensor/humidity"
+  name: "Pokus vlhkost"
+  qos: 0
+  unit_of_measurement: "%"
+- platform: mqtt
+  state_topic: "pokus/sensor/heatindex"
+  name: "Pokus heat index"
+  qos: 0
+- platform: glances
+  name: RPi
+  host: 127.0.0.1
+  port: 61208
+#  scan_interval: 60
+  resources:
+    - 'disk_use_percent'
+#   - 'disk_use'
+    - 'disk_free'
+    - 'memory_use_percent'
+#   - 'memory_use'
+#   - 'memory_free'
+    - 'swap_use_percent'
+#   - 'swap_use'
+#   - 'swap_free'
+    - 'processor_load'
+#   - 'process_running'
+#   - 'process_total'
+#   - 'process_thread'
+#   - 'process_sleeping'
+- platform: glances
+  name: BananaPi
+  host: 10.0.0.110
+  port: 61208
+#  scan_interval: 60
+  resources:
+    - 'disk_use_percent'
+#   - 'disk_use'
+    - 'disk_free'
+    - 'memory_use_percent'
+#   - 'memory_use'
+#   - 'memory_free'
+    - 'swap_use_percent'
+#   - 'swap_use'
+#   - 'swap_free'
+    - 'processor_load'
+#   - 'process_running'
+#   - 'process_total'
+#   - 'process_thread'
+#   - 'process_sleeping'
+- platform: glances
+  name: 'OrangePi Zero'
+  host: 10.0.0.105
+  port: 61208
+#  scan_interval: 60
+  resources:
+    - 'disk_use_percent'
+#   - 'disk_use'
+    - 'disk_free'
+    - 'memory_use_percent'
+#   - 'memory_use'
+#   - 'memory_free'
+    - 'swap_use_percent'
+#   - 'swap_use'
+#   - 'swap_free'
+    - 'processor_load'
+#   - 'process_running'
+#   - 'process_total'
+#   - 'process_thread'
+#   - 'process_sleeping'

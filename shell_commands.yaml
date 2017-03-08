@@ -1,0 +1,7 @@
+# manipulating TV via CEC
+tv_on: /home/pi/cec/tv_on.sh > ~/tv.log 2>&1
+tv_off: /home/pi/cec/tv_off.sh > ~/tv.log 2>&1
+tv_source_tv: /home/pi/cec/tv_source_tv.sh > ~/tv.log 2>&1
+tv_source_rpi: /home/pi/cec/tv_source_rpi.sh > ~/tv.log 2>&1
+tv_mute: /home/pi/cec/tv_mute.sh > ~/tv.log 2>&1
+
