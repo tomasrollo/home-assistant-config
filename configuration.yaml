@@ -85,6 +85,10 @@ notify:
   method: GET
   message_param_name: pokus-esp8266
   title_param_name: humV
+- platform: slack
+  name: slack
+  api_key: !secret slack_key
+  default_channel: "#homeassistant"
 
 automation: !include automation.yaml
 

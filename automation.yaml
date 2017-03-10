@@ -3,11 +3,17 @@
     platform: sun
     event: sunset
   action:
-    service: notify.pb
+    service: notify.slack
     data:
       message: "Slunce zaslo"
-      title: "Slunce"
-      target: device/TomasiPhone
+- alias: Notify me when sun rises
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: notify.slack
+    data:
+      message: "Slunce vyslo"
 - alias: TMEP reporting
   trigger:
     platform: time
