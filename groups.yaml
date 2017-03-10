@@ -46,4 +46,11 @@ computers:
     - group.rpi
     - group.bananapi
     - group.orangepi
+mediaplayers:
+  name: Media Players
+  icon: mdi:play
+  view: yes
+  entities:
+    - media_player.rollovic_chromecast
+    - media_player.kodi
 
