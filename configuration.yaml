@@ -36,6 +36,12 @@ discovery:
 # Configure how long to store data internally
 recorder:
   purge_days: 14
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - sun
+      - updater
 
 # Enables support for tracking state changes over time.
 history:
