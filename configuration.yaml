@@ -21,6 +21,9 @@ http:
 #  ssl_certificate: '/etc/letsencrypt/live/rollo-home.duckdns.org/fullchain.pem'
 #  ssl_key: '/etc/letsencrypt/live/rollo-home.duckdns.org/privkey.pem'
 
+# Enables configuration panel
+config:
+
 # Enables the frontend
 frontend:
 
