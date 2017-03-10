@@ -52,17 +52,17 @@ history:
       - sun
       - updater
 
-#influxdb:
-#  host: rollo-forpsi1.duckdns.org
-#  port: 8086
-#  username: home-assistant
-#  password: !secret influxdb_ha_password
-#  database: home_assistant
-#  blacklist:
-#    - sun.sun
-#  tags:
-#    instance: prod
-#    source: hass
+influxdb:
+  host: !secret influxdb_ip
+  port: 8086
+  username: home-assistant
+  password: !secret influxdb_ha_password
+  database: home_assistant
+  blacklist:
+    - sun.sun
+  tags:
+    instance: prod
+    source: hass
 
 # View all events in a logbook
 logbook:
